@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire de gestion de crise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Questionnaire de gestion de crise</h1>
+    <form id="criseForm">
+        <div class="question">
+            <p>Votre nom ou e-mail :</p>
+            <input type="text" id="nom" name="nom" required>
+        </div>
+
+        <div class="question">
+            <p>1. Disposez-vous d’un plan de gestion de crise validé par votre COMEX ?</p>
+            <label><input type="radio" name="q1" value="complet" required> Oui, complet et à jour</label>
+            <label><input type="radio" name="q1" value="partiel"> Oui, mais partiel ou ancien</label>
+            <label><input type="radio" name="q1" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>2. Votre dirigeant(e) a-t-il été formé récemment aux situations de tension ?</p>
+            <label><input type="radio" name="q2" value="recent" required> Oui, récemment et au moins une fois par an</label>
+            <label><input type="radio" name="q2" value="occasionnel"> Oui, mais de manière occasionnelle</label>
+            <label><input type="radio" name="q2" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>3. Savez-vous ce qui se dit de votre entreprise sur les réseaux sociaux ?</p>
+            <label><input type="radio" name="q3" value="veille_reguliere" required> Oui, nous disposons d’une veille régulière et complète sur les réseaux sociaux</label>
+            <label><input type="radio" name="q3" value="veille_incomplete"> Oui, mais de manière incomplète</label>
+            <label><input type="radio" name="q3" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>4. Avez-vous déjà simulé un scénario de crise sociale ou interne ?</p>
+            <label><input type="radio" name="q4" value="regulierement" required> Oui, nous organisons régulièrement ce type d’exercice</label>
+            <label><input type="radio" name="q4" value="pas_social_interne"> Oui, mais pas sur un scénario de crise sociale ou interne</label>
+            <label><input type="radio" name="q4" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>5. Disposez-vous d’un protocole de communication en cas de contrôle ou sanction ?</p>
+            <label><input type="radio" name="q5" value="complet" required> Oui, complet et à jour</label>
+            <label><input type="radio" name="q5" value="partiel"> Oui, mais partiel ou ancien</label>
+            <label><input type="radio" name="q5" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>6. Avez-vous une stratégie claire pour répondre aux médias ?</p>
+            <label><input type="radio" name="q6" value="complete" required> Oui, complète et à jour</label>
+            <label><input type="radio" name="q6" value="partielle"> Oui, mais partielle ou ancienne et qui mériterait une mise à jour</label>
+            <label><input type="radio" name="q6" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>7. Vos équipes ont-elles été formées aux réflexes en cas de crise ?</p>
+            <label><input type="radio" name="q7" value="regulierement" required> Oui, nous organisons régulièrement ce type de formation</label>
+            <label><input type="radio" name="q7" value="pas_depuis_longtemps"> Oui, mais pas depuis longtemps</label>
+            <label><input type="radio" name="q7" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>8. Vos outils de communication interne permettent-ils une alerte rapide en cas de crise ?</p>
+            <label><input type="radio" name="q8" value="rapide_efficace" required> Oui, ils permettent de réagir avec rapidité et efficacité</label>
+            <label><input type="radio" name="q8" value="non_testes"> Oui, mais ils n’ont pas été mis à l’épreuve depuis plusieurs années</label>
+            <label><input type="radio" name="q8" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>9. Avez-vous identifié des zones de vulnérabilité en lien avec des tiers ?</p>
+            <label><input type="radio" name="q9" value="cartographie_a_jour" required> Oui, notre cartographie des risques est à jour et intègre cette dimension</label>
+            <label><input type="radio" name="q9" value="cartographie_ancienne"> Oui, mais notre cartographie est ancienne et/ou n’intègre pas tous les risques en lien avec des tiers</label>
+            <label><input type="radio" name="q9" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>10. Vos instances (CA, COMEX) sont-elles sensibilisées à la gestion de crise ?</p>
+            <label><input type="radio" name="q10" value="sensibilisees" required> Oui, nos instances dirigeantes sont sensibilisées et formées à la gestion de crise</label>
+            <label><input type="radio" name="q10" value="il_y_a_longtemps"> Oui, mais il y a longtemps</label>
+            <label><input type="radio" name="q10" value="non"> Non</label>
+        </div>
+
+        <div class="question">
+            <p>11. Votre entreprise appartient-elle à un secteur identifié comme particulièrement exposé aux risques de crise médiatique, sociale, réglementaire ou environnementale ?</p>
+            <label><input type="radio" name="q11" value="secteur_sensible" required> Oui, nous opérons dans un secteur sensible ou fortement médiatisé</label>
+            <label><input type="radio" name="q11" value="peut_etre"> Peut-être, mais sans enjeu immédiat connu</label>
+            <label><input type="radio" name="q11" value="non"> Non, nous ne sommes pas dans un secteur particulièrement exposé</label>
+        </div>
+
+        <div class="question">
+            <p>12. Votre entreprise a-t-elle déjà subi une situation de crise par le passé et en a-t-elle tiré des enseignements en gestion de crise ?</p>
+            <label><input type="radio" name="q12" value="oui" required> Oui</label>
+            <label><input type="radio" name="q12" value="non"> Non</label>
+        </div>
+
+        <button type="submit">Soumettre</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
