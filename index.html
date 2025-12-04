@@ -9,10 +9,9 @@
 <body>
     <h1>Questionnaire de gestion de crise</h1>
     <form name="criseForm" netlify id="criseForm">
-        <div class="question">
-            <p>Votre nom ou e-mail :</p>
-            <input type="text" id="nom" name="nom" required>
-        </div>
+        <div class="question" style="text-align: center; margin-bottom: 30px;">
+    <p style="font-size: 16px; color: #7f8c8d;">Répondez à ce questionnaire pour évaluer votre niveau de préparation aux crises.</p>
+</div>
         <div class="question">
             <p>1. Disposez-vous d’un plan de gestion de crise validé par votre COMEX ?</p>
             <label><input type="radio" name="q1" value="complet" required> Oui, complet et à jour</label>
@@ -84,7 +83,7 @@
             <label><input type="radio" name="q12" value="oui" required> Oui</label>
             <label><input type="radio" name="q12" value="non"> Non</label>
         </div>
-        <button type="submit">Soumettre</button>
+        <button type="button" id="voirDiagnostic" style="background-color: #3498db; border: none;">Voir mon diagnostic</button>
     </form>
 </body>
 </html>
