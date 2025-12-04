@@ -106,13 +106,14 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="contact-section">
                 <h2>Vous souhaitez aller plus loin ?</h2>
                 <p>Laissez-nous vos coordonnées et nous vous contacterons dans les meilleurs délais :</p>
-                <form id="contactForm">
-                    <input type="text" placeholder="Nom :" required><br>
-                    <input type="email" placeholder="Email :" required><br>
-                    <textarea placeholder="Message :" required></textarea><br>
+                <form name="contactForm" netlify>
+                    <input type="text" name="name" placeholder="Nom :" required><br>
+                    <input type="email" name="email" placeholder="Email :" required><br>
+                    <textarea name="message" placeholder="Message :" required></textarea><br>
+                    <input type="hidden" name="form-name" value="contactForm" />
                     <button type="submit">Envoyer</button>
                 </form>
-                <p style="margin-top: 15px; font-size: 14px; color: #7f8c8d;">Contactez-nous : vincent.prevost@opinionvalley.com</p>
+                <p style="margin-top: 15px; font-size: 14px; color: #7f8c8d;">Contact : <a href="mailto:vincent.prevost@opinionvalley.com">vincent.prevost@opinionvalley.com</a></p>
             </div>
         `;
 
