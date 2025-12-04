@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <textarea placeholder="Message :" required></textarea><br>
                     <button type="submit">Envoyer</button>
                 </form>
-                <p style="margin-top: 15px; font-size: 14px; color: #7f8c8d;">Contactez-nous : contact@opinionvalley.com</p>
+                <p style="margin-top: 15px; font-size: 14px; color: #7f8c8d;">Contactez-nous : vincent.prevost@opinionvalley.com</p>
             </div>
         `;
 
