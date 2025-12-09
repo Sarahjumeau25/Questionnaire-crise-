@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="contact-section">
                 <h2>Vous souhaitez aller plus loin ?</h2>
                 <p>Laissez-nous vos coordonnées et nous vous contacterons dans les meilleurs délais :</p>
-                <form name="contactForm" method="POST" netlify>
-                    <input type="hidden" name="form-name" value="contactForm" />
+                <form name="criseForm" method="POST" netlify>
+                    <input type="hidden" name="form-name" value="criseForm" />
                     <input type="text" name="name" placeholder="Nom :" required><br>
                     <input type="email" name="email" placeholder="Email :" required><br>
                     <textarea name="message" placeholder="Message :" required></textarea><br>
