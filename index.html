@@ -100,20 +100,12 @@
                 <label><input type="radio" name="q12" value="non"> Non</label>
             </div>
 
-            <div class="contact-section">
-                <h2>Vous souhaitez aller plus loin ?</h2>
-                <p>Laissez-nous vos coordonnées et nous vous contacterons dans les meilleurs délais :</p>
-                <input type="text" name="nom_contact" placeholder="Nom" required>
-                <input type="email" name="email_contact" placeholder="Email" required>
-                <textarea name="message" placeholder="Message" required></textarea>
-                <button type="submit">Envoyer</button>
+            <button type="button" id="voirDiagnostic">Voir mon diagnostic</button>
+
+            <div id="diagnosticSection" style="display: none;">
+                <!-- Le diagnostic et le formulaire de contact seront ajoutés ici par JavaScript -->
             </div>
         </form>
-
-        <div id="confirmationMessage" style="display: none;">
-            <h3>Merci pour votre message !</h3>
-            <p>Nous vous recontacterons dans les meilleurs délais.</p>
-        </div>
     </div>
 
     <script src="script.js"></script>
