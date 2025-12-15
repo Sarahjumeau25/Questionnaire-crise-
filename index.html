@@ -10,11 +10,12 @@
     <div class="container">
         <h1>Êtes-vous prêt pour la prochaine crise ?</h1>
 
-        <form name="criseForm" id="criseForm" netlify>
+        <form id="criseForm" name="criseForm" netlify>
             <div class="question">
                 <p>Répondez à ce questionnaire pour évaluer votre niveau de préparation aux crises.</p>
             </div>
 
+            <!-- Toutes les questions ici -->
             <div class="question">
                 <p>1. Disposez-vous d’un plan de gestion de crise validé par votre COMEX ?</p>
                 <label><input type="radio" name="q1" value="complet" required> Oui, complet et à jour</label>
@@ -100,6 +101,8 @@
 
             <button type="button" id="voirDiagnostic">Voir mon diagnostic</button>
         </form>
+
+        <div id="diagnosticSection" style="display: none;"></div>
     </div>
 
     <script src="script.js"></script>
