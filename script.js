@@ -74,16 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 <form name="criseForm" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="criseForm">
                     ${hiddenFields}
-                    <input type="text" name="nom" placeholder="Nom :" required><br>
-                    <input type="email" name="email" placeholder="Email :" required><br>
-                    <textarea name="message" placeholder="Message :" required></textarea><br>
+                    <input type="text" name="nom_contact" placeholder="Nom" required><br>
+                    <input type="email" name="email_contact" placeholder="Email" required><br>
+                    <textarea name="message" placeholder="Message" required></textarea><br>
                     <button type="submit">Envoyer</button>
                 </form>
                 <div id="confirmationMessage" style="display: none; text-align: center; padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin: 20px 0;">
                     <h3 style="color: #27ae60;">Merci pour votre message !</h3>
                     <p>Nous vous recontacterons dans les meilleurs délais.</p>
                 </div>
-                <p style="margin-top: 15px; font-size: 14px; color: #7f8c8d;">Contact : <a href="mailto:vincent.prevost@opinionvalley.com">vincent.prevost@opinionvalley.com</a></p>
             </div>
         `;
 
@@ -92,5 +91,27 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("retourQuestionnaire").addEventListener("click", function() {
             location.reload();
         });
+
+        // Écoute de l'événement de soumission réussie de Netlify
+        const contactForm = document.querySelector('form[name="criseForm"]');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                fetch('/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    contactForm.style.display = 'none';
+                    document.getElementById('confirmationMessage').style.display = 'block';
+                })
+                .catch((error) => {
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                    console.error(error);
+                });
+            });
+        }
     });
 });
