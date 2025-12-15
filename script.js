@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="contact-section">
                 <h2>Vous souhaitez aller plus loin ?</h2>
                 <p>Laissez-nous vos coordonnées et nous vous contacterons dans les meilleurs délais :</p>
-                <form name="criseForm" method="POST" netlify>
+                <form name="criseForm" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="criseForm">
                     ${hiddenFields}
                     <input type="text" name="nom" placeholder="Nom :" required><br>
@@ -92,27 +92,5 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("retourQuestionnaire").addEventListener("click", function() {
             location.reload();
         });
-
-        // Écoute de l'événement de soumission réussie de Netlify
-        const form = document.querySelector('form[name="criseForm"]');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const formData = new FormData(form);
-                fetch('/', {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString()
-                })
-                .then(() => {
-                    form.style.display = 'none';
-                    document.getElementById('confirmationMessage').style.display = 'block';
-                })
-                .catch((error) => {
-                    alert('Une erreur est survenue. Veuillez réessayer.');
-                    console.error(error);
-                });
-            });
-        }
     });
 });
