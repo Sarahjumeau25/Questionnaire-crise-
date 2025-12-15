@@ -50,30 +50,11 @@ h1 {
     margin-right: 10px;
 }
 
-button {
-    display: block;
+.question input[type="text"] {
     width: 100%;
-    padding: 12px;
-    margin: 20px auto;
-    background-color: #3498db;
-    color: white;
-    border: none;
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-#diagnosticSection {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fefefe;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .contact-section {
@@ -104,22 +85,34 @@ button:hover {
     resize: vertical;
 }
 
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 20px auto;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
 #confirmationMessage {
     margin-top: 20px;
     padding: 20px;
     background-color: #e8f8f5;
     border-radius: 8px;
+    text-align: center;
 }
 
 #confirmationMessage h3 {
     color: #27ae60;
-}
-
-#retourQuestionnaire {
-    background-color: #3498db;
-    width: auto;
-    padding: 10px 20px;
-    margin: 20px auto;
 }
 
 @media (max-width: 600px) {
