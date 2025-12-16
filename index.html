@@ -110,13 +110,16 @@
                 <textarea name="message" placeholder="Votre message" required></textarea>
             </div>
 
-            <button type="submit">Envoyer</button>
-        </form>
+            <button type="button" id="voirDiagnostic">Voir mon diagnostic</button>
 
-        <div id="confirmationMessage" style="display: none;">
-            <h3>Merci pour votre message !</h3>
-            <p>Nous vous recontacterons dans les meilleurs délais.</p>
-        </div>
+            <div id="diagnosticSection" style="display: none;">
+                <!-- Le diagnostic sera affiché ici -->
+            </div>
+
+            <div id="contactSection" style="display: none;">
+                <!-- Le formulaire de contact sera affiché ici -->
+            </div>
+        </form>
     </div>
 
     <script src="script.js"></script>
