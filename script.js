@@ -58,33 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div style="text-align: center; margin-top: 30px;">
                 <button id="retourQuestionnaire" style="background-color: #3498db;">Retour au questionnaire</button>
-            </div>
-        `;
-
-        // Ajouter la section contact
-        let hiddenFields = '';
-        for (let i = 1; i <= 12; i++) {
-            hiddenFields += `<input type="hidden" name="q${i}" value="${reponses[`q${i}`] || ''}">`;
-        }
-
-        const contactSection = document.getElementById('contactSection');
-        contactSection.style.display = 'block';
-        contactSection.innerHTML = `
-            <div class="contact-section">
-                <h2>Vous souhaitez aller plus loin ?</h2>
-                <p>Laissez-nous vos coordonnées et nous vous contacterons dans les meilleurs délais :</p>
-                <form name="criseForm" method="POST" data-netlify="true">
-                    <input type="hidden" name="form-name" value="criseForm">
-                    ${hiddenFields}
-                    <input type="text" name="nom_contact" placeholder="Nom" value="${document.querySelector('input[name="nom"]').value}" required>
-                    <input type="email" name="email_contact" placeholder="Email" value="${document.querySelector('input[name="email"]').value}" required>
-                    <textarea name="message" placeholder="Message" required>${document.querySelector('textarea[name="message"]').value}</textarea>
-                    <button type="submit">Envoyer</button>
-                </form>
-                <div id="confirmationMessage" style="display: none; text-align: center; padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin: 20px 0;">
-                    <h3 style="color: #27ae60;">Merci pour votre message !</h3>
-                    <p>Nous vous recontacterons dans les meilleurs délais.</p>
-                </div>
+                <button id="envoyerContact" style="background-color: #27ae60; margin-left: 10px;">Envoyer mes coordonnées</button>
             </div>
         `;
 
@@ -92,26 +66,48 @@ document.addEventListener('DOMContentLoaded', function() {
             location.reload();
         });
 
-        // Écoute de l'événement de soumission réussie de Netlify
-        const contactForm = document.querySelector('#contactSection form[name="criseForm"]');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const formData = new FormData(contactForm);
-                fetch('/', {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString()
-                })
-                .then(() => {
-                    contactForm.style.display = 'none';
-                    document.querySelector('#contactSection #confirmationMessage').style.display = 'block';
-                })
-                .catch((error) => {
-                    alert('Une erreur est survenue. Veuillez réessayer.');
-                    console.error(error);
+        document.getElementById("envoyerContact").addEventListener("click", function() {
+            const contactSection = document.getElementById('contactSection');
+            contactSection.style.display = 'block';
+            contactSection.innerHTML = `
+                <div class="contact-section">
+                    <h2>Vous souhaitez aller plus loin ?</h2>
+                    <p>Laissez-nous vos coordonnées et nous vous contacterons dans les meilleurs délais :</p>
+                    <form name="contactForm" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contactForm">
+                        ${Object.entries(reponses).map(([key, value]) => `<input type="hidden" name="${key}" value="${value}">`).join('')}
+                        <input type="hidden" name="nom" value="${document.querySelector('input[name="nom"]').value}">
+                        <input type="hidden" name="email" value="${document.querySelector('input[name="email"]').value}">
+                        <input type="hidden" name="message" value="${document.querySelector('textarea[name="message"]').value}">
+                        <button type="submit">Envoyer</button>
+                    </form>
+                    <div id="confirmationMessage" style="display: none; text-align: center; padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin: 20px 0;">
+                        <h3 style="color: #27ae60;">Merci pour votre message !</h3>
+                        <p>Nous vous recontacterons dans les meilleurs délais.</p>
+                    </div>
+                </div>
+            `;
+
+            const contactForm = document.querySelector('#contactSection form[name="contactForm"]');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(contactForm);
+                    fetch('/', {
+                        method: 'POST',
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formData).toString()
+                    })
+                    .then(() => {
+                        contactForm.style.display = 'none';
+                        document.querySelector('#contactSection #confirmationMessage').style.display = 'block';
+                    })
+                    .catch((error) => {
+                        alert('Une erreur est survenue. Veuillez réessayer.');
+                        console.error(error);
+                    });
                 });
-            });
-        }
+            }
+        });
     });
 });
