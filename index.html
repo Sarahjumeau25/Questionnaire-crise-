@@ -13,8 +13,13 @@
             <input type="hidden" name="form-name" value="criseForm">
 
             <div class="question">
-                <p>Votre nom ou e-mail :</p>
-                <input type="text" name="nom" placeholder="Nom ou e-mail" required>
+                <p>Votre nom :</p>
+                <input type="text" name="nom" placeholder="Nom" required>
+            </div>
+
+            <div class="question">
+                <p>Votre email :</p>
+                <input type="email" name="email" placeholder="Email" required>
             </div>
 
             <div class="question">
@@ -100,12 +105,18 @@
                 <label><input type="radio" name="q12" value="non"> Non</label>
             </div>
 
-            <button type="button" id="voirDiagnostic">Voir mon diagnostic</button>
-
-            <div id="diagnosticSection" style="display: none;">
-                <!-- Le diagnostic et le formulaire de contact seront ajoutés ici par JavaScript -->
+            <div class="question">
+                <p>Message :</p>
+                <textarea name="message" placeholder="Votre message" required></textarea>
             </div>
+
+            <button type="submit">Envoyer</button>
         </form>
+
+        <div id="confirmationMessage" style="display: none;">
+            <h3>Merci pour votre message !</h3>
+            <p>Nous vous recontacterons dans les meilleurs délais.</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
