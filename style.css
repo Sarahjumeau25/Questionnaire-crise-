@@ -64,7 +64,7 @@ h1 {
     resize: vertical;
 }
 
-button[type="submit"] {
+button {
     display: block;
     width: 100%;
     padding: 12px;
@@ -78,8 +78,24 @@ button[type="submit"] {
     transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+button:hover {
     background-color: #2980b9;
+}
+
+#diagnosticSection {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#contactSection {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #confirmationMessage {
